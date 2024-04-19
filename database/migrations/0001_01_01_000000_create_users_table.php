@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('occupation')->nullable();
             $table->string('avatar')->nullable();
             $table->string('password');
-            $table->string('password_confirmation')->nullable();
+            $table->string('password_confirmation');
             $table->timestamps();
         });
 

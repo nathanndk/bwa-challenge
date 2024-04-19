@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('subscribe_transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->decimal('total_amount', 10, 2);
             $table->boolean('is_paid');
             $table->string('proof')->nullable();

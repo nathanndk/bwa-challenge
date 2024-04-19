@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('path_trailer')->nullable();
-            $table->text('about');
+            $table->string('about');
             $table->string('thumbnail')->nullable();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('teacher_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('teacher_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
